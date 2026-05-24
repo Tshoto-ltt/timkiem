@@ -52,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stats.innerHTML = showStats ? `Tìm thấy <strong>${list.length}</strong> kết quả.` : "";
       resultsGrid.innerHTML = list
         .map((b) => {
-          // Xử lý link ảnh từ JSON, nếu trống thì dùng ảnh mặc định
-          const imagePath = b.anh ? b.anh : `/Img/${encodeURIComponent(b.tenSach)}.jpg`;
+          const imagePath = b.anh ? b.anh : `Img/${encodeURIComponent(b.tenSach)}.jpg`;
           const bookData = encodeURIComponent(JSON.stringify(b));
           return `
             <div class="book-card" onclick="viewBookDetail('${bookData}')">
